@@ -1,0 +1,23 @@
+<p>
+  <a href="/">Home</a> | <a href="#!/new_question">Add a question</a> | <a href="#!/index">Logout</a>
+</p>
+<h1>Hi, {{user}}!</h1>
+<p><a href="#!/lets_play"><button>Play!</button></a></p>
+<p>Click the button above to start the trivia game.</p>
+<p>Search: <input type="text" placeholder="filter.." ng-model="filter_name"></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="score in scores | orderBy: score | filter:filter_name">
+      <td>{{score.name}}</td>
+      <td>{{score.score}}/3</td>
+      <td>{{score.percentage}}%</td>
+    </tr>
+  </tbody>
+</table>

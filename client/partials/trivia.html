@@ -1,0 +1,31 @@
+<h3>Hi {{user}}!</h3>
+<h5>Choose an answer for each of the questions and submit the test once done.</h5>
+<h5>Good luck!</h5>
+<form ng-submit = "create()">
+  <div ng-repeat="question in questions">
+    <p>{{question.question}}</p>
+    <p ng-repeat="answer in question.answers">
+      <input type="radio" ng-value="{{answer.value}}" ng-model="question.value">{{answer.answer}}
+    </p>
+  </div>
+  <hr>
+  <!-- <div>
+    <p>{{questions[0].question}}</p>
+    <p><input type="radio" ng-model="answers.one" ng-value="{{questions[0].answers[0].value}}">{{questions[0].answers[0].answer}}</p>
+    <p><input type="radio" ng-model="answers.one" ng-value="{{questions[0].answers[1].value}}">{{questions[0].answers[1].answer}}</p>
+    <p><input type="radio" ng-model="answers.one" ng-value="{{questions[0].answers[2].value}}">{{questions[0].answers[2].answer}}</p>
+  </div>
+  <div>
+    <p>{{questions[1].question}}</p>
+    <p><input type="radio" ng-model="answers.two" ng-value="{{questions[1].answers[0].value}}">{{questions[1].answers[0].answer}}</p>
+    <p><input type="radio" ng-model="answers.two" ng-value="{{questions[1].answers[1].value}}">{{questions[1].answers[1].answer}}</p>
+    <p><input type="radio" ng-model="answers.two" ng-value="{{questions[1].answers[2].value}}">{{questions[1].answers[2].answer}}</p>
+  </div>
+  <div>
+    <p>{{questions[2].question}}</p>
+    <p><input type="radio" ng-model="answers.three" ng-value="{{questions[2].answers[0].value}}">{{questions[2].answers[0].answer}}</p>
+    <p><input type="radio" ng-model="answers.three" ng-value="{{questions[2].answers[1].value}}">{{questions[2].answers[1].answer}}</p>
+    <p><input type="radio" ng-model="answers.three" ng-value="{{questions[2].answers[2].value}}">{{questions[2].answers[2].answer}}</p>
+  </div> -->
+  <a href="/"><button>Cancel</button></a> <button type="submit">Submit</button>
+</form>
